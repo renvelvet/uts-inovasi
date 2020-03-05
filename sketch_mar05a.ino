@@ -17,3 +17,24 @@ void setup() {
   Serial.println("Please Wait...");
   delay(7000);
 }
+
+void loop() {
+  distance = ultrasonic.read();
+
+  SerialBT.print("Distance in CM: ");
+  SerialBT.print(ultrasonis.read());
+  SerialBT.print(" cm");
+  SerialBT.print("Distance in CM: ");
+  SerialBT.print(distance);
+  SerialBT.print(" cm");
+  delay(500);
+  if ((distance<10) or (distance==357)) {
+    digitalWrite(23, HIGH);
+  }
+  else {
+    digitalWrite(23, LOW);
+  }
+  delay(5000);
+  }
+
+}
